@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scrum", "Scrum\Scrum.csproj", "{C3BE7DEA-595E-4648-8D95-6947DC6F7843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scrum.Model", "Scrum.Model\Scrum.Model.csproj", "{1AB8F545-9A1D-4EB5-B793-ED62CF459A80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scrum.Common", "Scrum.Common\Scrum.Common.csproj", "{D0D07F9D-91EF-4EFE-8919-CE1BDDC57424}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3BE7DEA-595E-4648-8D95-6947DC6F7843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BE7DEA-595E-4648-8D95-6947DC6F7843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3BE7DEA-595E-4648-8D95-6947DC6F7843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BE7DEA-595E-4648-8D95-6947DC6F7843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB8F545-9A1D-4EB5-B793-ED62CF459A80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB8F545-9A1D-4EB5-B793-ED62CF459A80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB8F545-9A1D-4EB5-B793-ED62CF459A80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB8F545-9A1D-4EB5-B793-ED62CF459A80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D07F9D-91EF-4EFE-8919-CE1BDDC57424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D07F9D-91EF-4EFE-8919-CE1BDDC57424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D07F9D-91EF-4EFE-8919-CE1BDDC57424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D07F9D-91EF-4EFE-8919-CE1BDDC57424}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6A9D549-5B4C-4CD3-96EB-853D97CE9E2A}
+	EndGlobalSection
+EndGlobal

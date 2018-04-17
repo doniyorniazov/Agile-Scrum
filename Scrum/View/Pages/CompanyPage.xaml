@@ -1,0 +1,58 @@
+﻿<Window x:Class="Scrum.View.Pages.CompanyPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:controls="clr-namespace:Scrum.View.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="200" d:DesignWidth="400"
+      Title="CompanyPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid VerticalAlignment=" Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                <TextBlock Text="Copany Name:"/>
+                <TextBlock Text="{Binding Name}"/>
+            </StackPanel>
+            <StackPanel Margin="0 10" Grid.Row="1" Orientation=" Vertical">
+                <TextBlock FontSize="10" Foreground="DarkGray">Projects:</TextBlock>
+                <TextBlock Text="{Binding ProjectCount}"/>
+                <TextBlock FontSize="10" Foreground="DarkGray">Workers:</TextBlock>
+                <TextBlock Text="{Binding WorkerCount}"/>
+            </StackPanel>
+        </Grid>
+        <Border  Grid.Column="1" BorderBrush="DarkRed" BorderThickness=" 2 0 0 0">
+            <StackPanel >
+                <TextBlock FontSize="16" HorizontalAlignment="Center"> Companies</TextBlock>
+                <ListView SelectedItem="{Binding SelectedCompany}" Margin="5"  ItemsSource="{Binding Path=Companies}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="1">
+                                <StackPanel Orientation="Horizontal" Margin="0,0,3.4,0">
+                                    <Border Width="10" Background="DarkRed"/>
+                                    <Border Padding="9" >
+                                        <Border Width="{Binding ActualHeight , RelativeSource ={RelativeSource Self}}" Background="CadetBlue"
+                                                CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+                                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding CompanyLogo}" FontWeight="Bold" FontSize="35" Foreground="White"/>
+                                        </Border>
+                                    </Border>
+                                    <Border>
+                                        <TextBlock VerticalAlignment="Center" FontWeight="Bold" FontSize="30" Foreground="CadetBlue" Text="{Binding Name}"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

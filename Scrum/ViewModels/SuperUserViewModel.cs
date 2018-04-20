@@ -28,10 +28,7 @@ namespace Scrum.ViewModels
 
         private void ExecuteRunDialog(object obj)
         {
-            var projectEditControl = new ProjectEditControl()
-            {
-                DataContext = new ProjectViewModel()
-            };
+            
         }
 
         private void Init()
@@ -44,6 +41,32 @@ namespace Scrum.ViewModels
                     Users = new ObservableCollection<User>(SelectedCompany.Users);
                 }
             });
+        }
+
+
+        int _projectCount;
+        public int ProjectCount
+        {
+            get
+            {
+                if (Projects == null) return _projectCount;
+                _projectCount = Projects.Count;
+                return _projectCount;
+            }
+
+            set { _projectCount = value; OnPropertyChanged(); }
+        }
+
+        int _workerCount;
+        public int WorkerCount
+        {
+            get
+            {
+                if (Users == null) return _workerCount;
+                _workerCount = Users.Count;
+                return _workerCount;
+            }
+            set { _workerCount = value; OnPropertyChanged(); }
         }
 
 

@@ -1,0 +1,31 @@
+﻿<Window x:Class="Scrum.View.Controls.NewCompanyControl"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="400" Width="400" >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.CheckBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <TextBlock FontSize="20" Text="New Company" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center" Margin="130,24,133.6,322.4" ></TextBlock>
+        <TextBlock Text="Name:" VerticalAlignment="Center" HorizontalAlignment="Right" Height="14"  Width="34" Margin="0,160,267.6,196.4" />
+        <TextBlock Text="Title:" VerticalAlignment="Center" HorizontalAlignment="Right" Height="15" Width="28" Margin="0,190,267.6,165.4" />
+        <TextBox Margin="136,146,129.6,191.4" Name="txtName" Text="TestCompany"/>
+        <TextBox  Name="txtTitle" Text="This is a test company" Margin="136,185,127.6,162.4"/>
+        <Button Content="Save" Click="Button_Click" Height="40" Width="200" VerticalAlignment="Bottom" Margin="96,0,97.6,43.4" />
+    </Grid>
+</Window>

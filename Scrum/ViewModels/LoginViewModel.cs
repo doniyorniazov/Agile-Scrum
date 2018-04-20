@@ -18,7 +18,7 @@ namespace Scrum.ViewModels
             Context = new EntityContext();
             InitCommands();
         }
-        
+
 
         void InitCommands()
         {
@@ -37,7 +37,8 @@ namespace Scrum.ViewModels
                 {
                     if (user.IsSuperUser)
                     {
-                        
+                        var superUserWindow = new SuperUserWindow();
+                        superUserWindow.ShowDialog();
                     }
                     else
                     {

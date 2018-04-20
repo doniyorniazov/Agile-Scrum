@@ -13,6 +13,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
+using Scrum.Model;
+using Scrum.SQL;
+using Scrum.View.Controls;
 using Scrum.ViewModels;
 
 namespace Scrum.View
@@ -22,9 +26,11 @@ namespace Scrum.View
     /// </summary>
     public partial class SuperUserWindow : Window
     {
+        private EntityContext Context;
         public SuperUserWindow()
         {
             InitializeComponent();
+            Context = new EntityContext();
             var viewModel = new SuperUserViewModel();
             DataContext = viewModel;
 
@@ -49,6 +55,17 @@ namespace Scrum.View
             {
 
             }
+        }
+
+        private void Add_CompanyClik(object sender, RoutedEventArgs e)
+        {
+            var a = new NewCompanyControl();
+            a.ShowDialog();
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

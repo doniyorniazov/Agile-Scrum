@@ -27,6 +27,8 @@ namespace Scrum.SQL
             // Company1
             var company1 = new Company(Context);
             company1.Name = "Silk Road Professionals";
+            company1.Title =
+                "We are one of the biggest programming team in Tajikistan that works in C#. And our goal is to achieve something.";
 
             var project1 = new Project(Context);
             project1.Name = "Test Project 1";
@@ -67,6 +69,8 @@ namespace Scrum.SQL
             // Company2
             var company2 = new Company(Context);
             company2.Name = "Soghd Software Systems";
+            company2.Title =
+                "Our company is produces ASP.NET web sites and Desktop based application with .NET languages such as a C#";
 
             var project3 = new Project(Context);
             project3.Name = "Test Project 3";

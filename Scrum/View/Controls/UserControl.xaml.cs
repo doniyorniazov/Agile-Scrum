@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace Scrum.View.Controls
 {
     /// <summary>
-    /// Interaction logic for Task.xaml
+    /// Interaction logic for UserControl.xaml
     /// </summary>
-    public partial class Task : UserControl
+    public partial class UserWindow : Window
     {
-        public Task()
+        public UserWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -12,23 +12,35 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Scrum.SQL;
 
 namespace Scrum.View.Controls
 {
     /// <summary>
-    /// Interaction logic for Company.xaml
+    /// Interaction logic for NewCompanyControl.xaml
     /// </summary>
-    public partial class Company : UserControl
+    public partial class NewCompanyControl : Window
     {
-        public Company()
+        public NewCompanyControl()
         {
             InitializeComponent();
         }
 
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var Userwindow = new UserWindow();
-            Userwindow.ShowDialog();
+            var name = txtName.Text;
+            var title = txtTitle.Text;
+            var context = new EntityContext();
+            var company = new Scrum.Model.Company(context);
+            company.Name = name;
+            company.Title = title;
+            context.Companies.Add(company);
+            context.SaveChanges();
         }
     }
 }

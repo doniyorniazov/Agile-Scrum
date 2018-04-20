@@ -33,7 +33,7 @@
                         </Grid.RowDefinitions>
                         <!--<Image Source="Resources/Chartridge046_small.jpg" Height="140" Width="196" Stretch="UniformToFill" />-->
                         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                            <Button ToolTip="Open companies projects" Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
+                            <Button ToolTip="Open companies projects" Click="OpenProjects_Click"  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
                         HorizontalAlignment="Right" VerticalAlignment="Bottom"
                         Margin="0 0 16 -20">
                                 <materialDesign:PackIcon Kind="Visualstudio" />
@@ -53,13 +53,15 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <StackPanel Margin="10" HorizontalAlignment="Right">
+                            <StackPanel Margin="10" Orientation="Horizontal" HorizontalAlignment="Right">
                                 <TextBlock Foreground="DimGray" Text="Projects:"/>
-                                <TextBlock Text="{Binding ProjectCount}"></TextBlock>
+                                <TextBlock Foreground="DimGray" > 3</TextBlock>
+                                <!--Text="{Binding ProjectCount}"-->
                             </StackPanel>
-                            <StackPanel Margin="10" Grid.Column="1" >
+                            <StackPanel Orientation="Horizontal" Margin="10" Grid.Column="1" >
                                 <TextBlock Foreground="DimGray" Text="Workers:"/>
-                                <TextBlock Text="{Binding WorkerCount}"></TextBlock>
+                                <TextBlock Foreground="DimGray" > 4</TextBlock>
+                                <!--Text="{Binding WorkerCount}"-->
                             </StackPanel>
 
                         </Grid>

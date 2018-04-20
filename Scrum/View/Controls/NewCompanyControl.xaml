@@ -8,7 +8,7 @@
              xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Height="400" Width="400" >
+             mc:Ignorable="d" Height="400" Width="400" WindowStyle="None" >
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -20,12 +20,46 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
+
     <Grid>
-        <TextBlock FontSize="20" Text="New Company" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center" Margin="130,24,133.6,322.4" ></TextBlock>
-        <TextBlock Text="Name:" VerticalAlignment="Center" HorizontalAlignment="Right" Height="14"  Width="34" Margin="0,160,267.6,196.4" />
-        <TextBlock Text="Title:" VerticalAlignment="Center" HorizontalAlignment="Right" Height="15" Width="28" Margin="0,190,267.6,165.4" />
-        <TextBox Margin="136,146,129.6,191.4" Name="txtName" Text="TestCompany"/>
-        <TextBox  Name="txtTitle" Text="This is a test company" Margin="136,185,127.6,162.4"/>
-        <Button Content="Save" Click="Button_Click" Height="40" Width="200" VerticalAlignment="Bottom" Margin="96,0,97.6,43.4" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="Transparent" VerticalAlignment="Top" >
+            <Grid>
+                <materialDesign:ColorZone Mode="PrimaryMid">
+                    <StackPanel HorizontalAlignment="Right">
+                        <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="ButtonBase_OnClick">
+                            <materialDesign:PackIcon Kind="WindowClose"></materialDesign:PackIcon>
+                        </Button>
+                    </StackPanel>
+                </materialDesign:ColorZone>
+            </Grid>
+        </Border>
+        <TextBlock FontSize="18"  Grid.Row="1"  Text="New Company" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"  ></TextBlock>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="102*"/>
+                <RowDefinition Height="38*"/>
+                <RowDefinition Height="38*"/>
+                <RowDefinition Height="51*"/>
+                <RowDefinition Height="52*"/>
+                <RowDefinition Height="21*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="116*"/>
+                <ColumnDefinition Width="191*"/>
+                <ColumnDefinition Width="87*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Name:" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"   />
+            <TextBlock Text="Title:" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="2"  />
+            <TextBox Name="txtName" Text="TestCompany" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Name="txtTitle" Text="This is a test company" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button Content="Save" Click="Button_Click" VerticalAlignment="Center"  Grid.Column="1" Grid.Row="4"  />
+        </Grid>
     </Grid>
 </Window>

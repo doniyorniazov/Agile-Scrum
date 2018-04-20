@@ -10,9 +10,9 @@
              mc:Ignorable="d"
              Background="{DynamicResource MaterialDesignPaper}"
              FontFamily="{DynamicResource MaterialDesignFont}"
+             WindowStartupLocation="CenterScreen"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        WindowStyle="None"
-             >
+             WindowStyle="None" Width="900">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -30,8 +30,6 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-            
         <Border Grid.Row="0" Background="Transparent" VerticalAlignment="Top" >
             <Grid>
                 <materialDesign:ColorZone Mode="PrimaryMid">
@@ -96,6 +94,70 @@
                                      Margin="0 12 0 0">James</TextBox>
                                     <TextBox Grid.Row="1" materialDesign:HintAssist.Hint="Last name" materialDesign:HintAssist.IsFloating="True"
                                      Margin="0 12 0 0">Willock</TextBox>
+                                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 12 0 0" HorizontalAlignment="Right">
+                                        <TextBlock VerticalAlignment="Center">Email Contact</TextBlock>
+                                        <ToggleButton Margin="8 0 0 0"></ToggleButton>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0 12 0 0" HorizontalAlignment="Right">
+                                        <TextBlock VerticalAlignment="Center">Telephone Contact</TextBlock>
+                                        <ToggleButton Margin="8 0 0 0"></ToggleButton>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </materialDesign:Flipper.BackContent>
+                    </materialDesign:Flipper>
+                </smtx:XamlDisplay>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <smtx:XamlDisplay Key="cards_8"  Margin="4 4 0 0" VerticalContentAlignment="Top">
+                    <materialDesign:Flipper Style="{StaticResource MaterialDesignCardFlipper}">
+                        <materialDesign:Flipper.FrontContent>
+                            <Grid Height="256" Width="200">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="160" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <materialDesign:ColorZone Mode="PrimaryLight" VerticalAlignment="Stretch">
+                                    <materialDesign:PackIcon Kind="AccountCircle" Height="128" Width="128"
+                                                     VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </materialDesign:ColorZone>
+                                <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock>Jameshed Akhmedov</TextBlock>
+                                    <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                    Command="{x:Static materialDesign:Flipper.FlipCommand}"
+                                    Margin="0 4 0 0"
+                                    >EDIT</Button>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Flipper.FrontContent>
+                        <materialDesign:Flipper.BackContent>
+                            <Grid Height="256" Width="200">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <materialDesign:ColorZone Mode="Accent" Padding="6">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Style="{StaticResource MaterialDesignToolForegroundButton}"
+                                    Command="{x:Static materialDesign:Flipper.FlipCommand}"
+                                    HorizontalAlignment="Left">
+                                            <materialDesign:PackIcon Kind="ArrowLeft" HorizontalAlignment="Right" />
+                                        </Button>
+                                        <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">EDIT USER</TextBlock>
+                                    </StackPanel>
+                                </materialDesign:ColorZone>
+                                <Grid Grid.Row="1" Margin="0 6 0 0" HorizontalAlignment="Center" VerticalAlignment="Top"
+                              Width="172">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <TextBox materialDesign:HintAssist.Hint="First name" materialDesign:HintAssist.IsFloating="True"
+                                     Margin="0 12 0 0">Jamshed</TextBox>
+                                    <TextBox Grid.Row="1" materialDesign:HintAssist.Hint="Last name" materialDesign:HintAssist.IsFloating="True"
+                                     Margin="0 12 0 0">Akhmedov</TextBox>
                                     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 12 0 0" HorizontalAlignment="Right">
                                         <TextBlock VerticalAlignment="Center">Email Contact</TextBlock>
                                         <ToggleButton Margin="8 0 0 0"></ToggleButton>
@@ -238,8 +300,6 @@
                     </materialDesign:Flipper>
                 </smtx:XamlDisplay>
             </StackPanel>
-
-
         </StackPanel>
     </Grid>
 

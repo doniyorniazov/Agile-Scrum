@@ -10,19 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Scrum.View
+namespace Scrum.View.Controls
 {
     /// <summary>
-    /// Interaction logic for TasksList.xaml
+    /// Interaction logic for ProjectWindow.xaml
     /// </summary>
-    public partial class TasksList : UserControl
+    public partial class ProjectWindow : Window
     {
-        public TasksList()
+        public ProjectWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

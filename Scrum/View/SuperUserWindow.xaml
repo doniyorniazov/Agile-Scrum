@@ -11,7 +11,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        Title="Super user" WindowStyle="None" Height="300" Width="600">
+        WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -23,12 +23,14 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
+
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
         <Border Grid.Row="0" Background="Transparent" VerticalAlignment="Top" >
             <Grid>
                 <materialDesign:ColorZone Mode="PrimaryMid">
@@ -40,108 +42,29 @@
                 </materialDesign:ColorZone>
             </Grid>
         </Border>
-
-        <Grid Height="60" Grid.Row="1"  VerticalAlignment="Top">
-            <TextBlock Text="Companies" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" ></TextBlock>
-            <Button ToolTip="Open companies projects" Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+        <Grid Grid.Row="1" Grid.RowSpan="2">
+            <Grid Height="60" VerticalAlignment="Top">
+                <TextBlock Text="Companies" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" ></TextBlock>
+            </Grid>
+            <StackPanel Margin="15" Grid.Row="2" Orientation="Horizontal">
+                <Button HorizontalAlignment="Right" ToolTip="Add new company"  Style="{StaticResource MaterialDesignFloatingActionDarkButton}" 
                     Click="Add_CompanyClik">
-                <materialDesign:PackIcon Height="26" Width="26"  Kind="PlusBoxOutline" />
-            </Button>
+                    <materialDesign:PackIcon Height="26" Width="26"  Kind="PlusBoxOutline" />
+                </Button>
+                <ListView ItemsSource="{Binding Companies}" x:Name="uiUsers">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"></StackPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <controls:Company/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
         </Grid>
-        <WrapPanel Margin="15" Grid.Row="2" Orientation="Horizontal">
-            <ListView  SelectedItem="{Binding SelectedCompany}" ItemsSource="{Binding Companies}" x:Name="uiUsers">
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal"></StackPanel>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <controls:Company/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </WrapPanel>
-        <!--<TextBlock Text="{Binding Path=Name}" />
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <ListView Name="uiWorkerList"  ItemsSource="{Binding Users}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <smtx:XamlDisplay Key="cards_9"  VerticalContentAlignment="Top">
-                            -->
-        <!--Margin="4 4 0 0"-->
-        <!--
-                            <materialDesign:Flipper Style="{StaticResource MaterialDesignCardFlipper}">
-                                <materialDesign:Flipper.FrontContent>
-                                    <Button Style="{StaticResource MaterialDesignFlatButton}"
-                        Command="{x:Static materialDesign:Flipper.FlipCommand}"
-                        Width="192" Content="{Binding Name}"/>
-                                    -->
-        <!--Margin="8"-->
-        <!--
-                                </materialDesign:Flipper.FrontContent>
-                                <materialDesign:Flipper.BackContent>
-                                    <Grid Height="256" Width="200">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="*" />
-                                        </Grid.RowDefinitions>
-                                        <materialDesign:ColorZone Mode="Accent" Padding="6">
-                                            <StackPanel Orientation="Horizontal">
-                                                <Button Style="{StaticResource MaterialDesignToolForegroundButton}"
-                                    Command="{x:Static materialDesign:Flipper.FlipCommand}"
-                                    HorizontalAlignment="Left">
-                                                    <materialDesign:PackIcon Kind="ArrowLeft" HorizontalAlignment="Right" />
-                                                </Button>
-                                                <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">EDIT USER</TextBlock>
-                                            </StackPanel>
-                                        </materialDesign:ColorZone>
-                                        <Grid Grid.Row="1" Margin="0 6 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="172">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                            </Grid.RowDefinitions>
-                                            <TextBox materialDesign:HintAssist.Hint="First name" materialDesign:HintAssist.IsFloating="True" Margin="0 12 0 0" Text="{Binding Name}"/>
-                                            <TextBox Grid.Row="1" materialDesign:HintAssist.Hint="Last name" materialDesign:HintAssist.IsFloating="True" Text="{Binding LastName}" Margin="0 12 0 0"/>
-                                            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 12 0 0" HorizontalAlignment="Right">
-                                                <TextBlock VerticalAlignment="Center">Email Contact</TextBlock>
-                                                <ToggleButton Margin="8 0 0 0"></ToggleButton>
-                                            </StackPanel>
-                                            <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0 12 0 0" HorizontalAlignment="Right">
-                                                <TextBlock VerticalAlignment="Center">Telephone Contact</TextBlock>
-                                                <ToggleButton Margin="8 0 0 0"></ToggleButton>
-                                            </StackPanel>
-                                        </Grid>
-                                    </Grid>
-                                </materialDesign:Flipper.BackContent>
-                            </materialDesign:Flipper>
-                        </smtx:XamlDisplay>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
-
-
-        <!--<ListView Grid.Column="1" Name="uiProjectList" ItemsSource="{Binding Projects}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Name}" > -->
-        <!--MouseDown="TextBlock_MouseDown"-->
-        <!--<TextBlock.InputBindings>
-                                    <MouseBinding Command="{Binding RunDialogCommand}" MouseAction="LeftClick" />
-                                </TextBlock.InputBindings>-->
-        <!--
-                        </TextBlock>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
-        </Grid.Col>-->
     </Grid>
 </Window>
 

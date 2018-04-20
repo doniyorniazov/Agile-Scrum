@@ -24,9 +24,9 @@ namespace Scrum
         public MainPage()
         {
             InitializeComponent();
-            var context = new EntityContext();
-            context.Tasks.Add(new Model.Task(context));
-            context.SaveChanges();
+            //var context = new EntityContext();
+            //context.Tasks.Add(new Model.Task(context));
+            //context.SaveChanges();
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
@@ -48,8 +48,7 @@ namespace Scrum
 
         private void Home_Click(object sender, MouseButtonEventArgs e)
         {
-            var page = new TestPage();
-            page.ShowDialog();
+
         }
 
         private void BtnBackLog_OnClick(object sender, RoutedEventArgs e)

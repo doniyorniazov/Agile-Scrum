@@ -30,5 +30,11 @@ namespace Scrum.View.Controls
             var Userwindow = new UserWindow();
             Userwindow.ShowDialog();
         }
+
+        private void OpenProjects_Click(object sender, RoutedEventArgs e)
+        {
+            var ProjectWindow = new ProjectWindow();
+            ProjectWindow.ShowDialog();
+        }
     }
 }

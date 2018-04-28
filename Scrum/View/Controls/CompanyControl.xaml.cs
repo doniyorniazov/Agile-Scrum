@@ -12,15 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Scrum.ViewModels;
 
 namespace Scrum.View.Controls
 {
     /// <summary>
     /// Interaction logic for Company.xaml
     /// </summary>
-    public partial class Company : UserControl
+    public partial class CompanyControl : UserControl
     {
-        public Company()
+        public CompanyControl()
         {
             InitializeComponent();
         }
@@ -33,8 +34,12 @@ namespace Scrum.View.Controls
 
         private void OpenProjects_Click(object sender, RoutedEventArgs e)
         {
-            var ProjectWindow = new ProjectWindow();
-            ProjectWindow.ShowDialog();
+            var button = sender as Button;
+            if (button.DataContext is Model.Company selectedCompany)
+            {
+                var ProjectWindow = new ProjectWindow() { DataContext = new ProjectViewModel(selectedCompany) };
+                ProjectWindow.ShowDialog();
+            }
         }
     }
 }

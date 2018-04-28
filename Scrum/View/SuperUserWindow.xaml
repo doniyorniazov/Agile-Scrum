@@ -11,7 +11,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        WindowStyle="None" WindowStartupLocation="CenterScreen">
+        WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -23,16 +23,17 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-
     <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="409*"/>
+            <RowDefinition Height="97*"/>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Background="Transparent" VerticalAlignment="Top" >
+        <!--<Border Grid.Row="0" Background="Transparent" VerticalAlignment="Top" >
             <Grid>
+                <TextBlock Text="Companies" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" ></TextBlock>
                 <materialDesign:ColorZone Mode="PrimaryMid">
                     <StackPanel HorizontalAlignment="Right">
                         <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="ButtonBase_OnClick">
@@ -41,29 +42,46 @@
                     </StackPanel>
                 </materialDesign:ColorZone>
             </Grid>
-        </Border>
-        <Grid Grid.Row="1" Grid.RowSpan="2">
-            <Grid Height="60" VerticalAlignment="Top">
-                <TextBlock Text="Companies" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" ></TextBlock>
+        </Border>-->
+
+        <Grid Grid.Row="1" Grid.RowSpan="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#353638" Name="LeftButttons">
+                    <Button Margin="10 5 " Width="35" Height="35" ToolTip="Add new company"  Style="{StaticResource MaterialDesignFloatingActionDarkButton}" Click="Add_CompanyClik">
+                        <materialDesign:PackIcon Height="25" Width="25" Kind="Plus" />
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center">  Add Company</TextBlock>
+                    <Button Margin="10 5" Width="35" Height="35"  ToolTip="Open settings"  Style="{StaticResource MaterialDesignFloatingActionDarkButton}" Click="Add_CompanyClik">
+                        <materialDesign:PackIcon Height="25" Width="25" Kind="Wrench" />
+                    </Button>
+                    <TextBlock HorizontalAlignment="Center">Settings</TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Top">
+                    <TextBlock Text="Companies" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Margin="15" Orientation="Horizontal">
+                    <ItemsControl  ItemsSource="{Binding Companies}" x:Name="uiUsers">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <controls:CompanyControl/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
             </Grid>
-            <StackPanel Margin="15" Grid.Row="2" Orientation="Horizontal">
-                <Button HorizontalAlignment="Right" ToolTip="Add new company"  Style="{StaticResource MaterialDesignFloatingActionDarkButton}" 
-                    Click="Add_CompanyClik">
-                    <materialDesign:PackIcon Height="26" Width="26"  Kind="PlusBoxOutline" />
-                </Button>
-                <ListView ItemsSource="{Binding Companies}" x:Name="uiUsers">
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal"></StackPanel>
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <controls:Company/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
         </Grid>
     </Grid>
 </Window>

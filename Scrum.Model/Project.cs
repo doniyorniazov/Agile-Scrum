@@ -35,13 +35,13 @@ namespace Scrum.Model
         /// </summary>
         public virtual User ScrumMaster { get; set; }
 
-
         /// <summary>
         /// Company of project
         /// </summary>
 
         public Guid? CompanyId { get; set; }
         public virtual Company Company { get; set; }
+
         /// <summary>
         /// Project Sprints
         /// </summary>

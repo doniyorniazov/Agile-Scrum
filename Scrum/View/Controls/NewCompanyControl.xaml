@@ -57,8 +57,8 @@
 
             <TextBlock Text="Name:" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"   />
             <TextBlock Text="Title:" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="2"  />
-            <TextBox Name="txtName" Text="TestCompany" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Name="txtTitle" Text="This is a test company" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Name="txtName" Text="TestCompany" Grid.Row="1" Grid.Column="1" />
+            <TextBox Name="txtTitle" Text="This is a test company" Grid.Row="2" Grid.Column="1"/>
             <Button Content="Save" Click="Button_Click" VerticalAlignment="Center"  Grid.Column="1" Grid.Row="4"  />
         </Grid>
     </Grid>

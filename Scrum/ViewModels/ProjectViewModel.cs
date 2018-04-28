@@ -13,9 +13,55 @@ namespace Scrum.ViewModels
     {
         private EntityContext Context;
 
-        public ProjectViewModel()
+        public ProjectViewModel(Company company)
         {
             Context = new EntityContext();
+            Company = company;
+            Projects = new ObservableCollection<Project>(company.Projects);
+        }
+
+        Project _selectedProject;
+        public Project SelectedProject
+        {
+            get => _selectedProject;
+            set { _selectedProject = value; OnPropertyChanged(); }
+        }
+
+
+        string _currentSprintEndDate;
+        public string CurrentSprintEndDate
+        {
+            get => _currentSprintEndDate;
+            set { _currentSprintEndDate = value; OnPropertyChanged(); }
+        }
+
+        string _currentSprintNumber;
+        public string CurrentSprintNumber
+        {
+            get => _currentSprintNumber;
+            set { _currentSprintNumber = value; OnPropertyChanged(); }
+        }
+
+        string _name;
+        public string Name
+        {
+            get
+            {
+                if (SelectedProject != null)
+                {
+                    return SelectedProject.Name;
+                }
+                return Name;
+
+            }
+            set { _name = value; OnPropertyChanged(); }
+        }
+
+        Company _company;
+        public Company Company
+        {
+            get => _company;
+            set { _company = value; OnPropertyChanged(); }
         }
 
         private ObservableCollection<Project> _projects;

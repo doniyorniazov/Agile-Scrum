@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Scrum.View.Controls.Company"
+﻿<UserControl x:Class="Scrum.View.Controls.CompanyControl"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              Background="{DynamicResource MaterialDesignPaper}"
              FontFamily="{DynamicResource MaterialDesignFont}"
@@ -31,7 +31,7 @@
                             <RowDefinition Height="*" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <!--<Image Source="Resources/Chartridge046_small.jpg" Height="140" Width="196" Stretch="UniformToFill" />-->
+                        <Image Source="C:\Users\Doniyor.MRA\Desktop\google-office-design-concept-fice-design-google-fice-google-fice-in1.jpg" Height="140" Width="196" Stretch="UniformToFill" />
                         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                             <Button ToolTip="Open companies projects" Click="OpenProjects_Click"  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
                         HorizontalAlignment="Right" VerticalAlignment="Bottom"
@@ -52,6 +52,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Margin="10" Orientation="Horizontal" HorizontalAlignment="Right">
                                 <TextBlock Foreground="DimGray" Text="Projects:"/>
@@ -60,8 +61,17 @@
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="10" Grid.Column="1" >
                                 <TextBlock Foreground="DimGray" Text="Workers:"/>
-                                <TextBlock Foreground="DimGray" > 4</TextBlock>
+                                <TextBlock Foreground="DimGray"> 4</TextBlock>
                                 <!--Text="{Binding WorkerCount}"-->
+                            </StackPanel>
+                            <StackPanel Grid.Column="2"  Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+
+                                <materialDesign:PopupBox  HorizontalAlignment="Right" Style="{StaticResource MaterialDesignToolForegroundPopupBox}" Padding="2 0 2 0">
+                                    <StackPanel>
+                                        <Button Content="Remove" Command="{Binding RemoveCommand}"/>
+                                        <Button Content="Options"/>
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
                             </StackPanel>
 
                         </Grid>

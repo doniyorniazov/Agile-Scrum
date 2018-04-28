@@ -73,11 +73,14 @@
     </Compile>
     <Compile Include="SQL\EntityContext.cs" />
     <Compile Include="View\Commands\AnotherCommandImplementation.cs" />
-    <Compile Include="View\Controls\Company.xaml.cs">
-      <DependentUpon>Company.xaml</DependentUpon>
+    <Compile Include="View\Controls\CompanyControl.xaml.cs">
+      <DependentUpon>CompanyControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\NewCompanyControl.xaml.cs">
       <DependentUpon>NewCompanyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\ProjectControl.xaml.cs">
+      <DependentUpon>ProjectControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Controls\ProjectWindow.xaml.cs">
       <DependentUpon>ProjectWindow.xaml</DependentUpon>
@@ -99,11 +102,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Controls\Company.xaml">
+    <Page Include="View\Controls\CompanyControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Controls\NewCompanyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\ProjectControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

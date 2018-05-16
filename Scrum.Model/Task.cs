@@ -20,9 +20,10 @@ namespace Scrum.Model
         }
 
         public Guid? AssigneeId { get; set; }
+
         public virtual User Assignee { get; set; }
 
-        public int TicketNumber { get; set; }
+        public string TicketNumber { get; set; }
 
         public int RankNumber { get; set; }
 
@@ -37,6 +38,9 @@ namespace Scrum.Model
         public virtual ICollection<Timecard> Timecards { get; set; }
 
         public Guid? SpintId { get; set; }
+
+        public int Size { get; set; }    
+
         public virtual Sprint Sprint { get; set; }
 
         public TaskStatus TaskStatus { get; set; }
@@ -47,12 +51,20 @@ namespace Scrum.Model
 
         public virtual CodeReview CodeReview { get; set; }
 
-        //public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         public virtual ICollection<User> Workers { get; set; }
 
         public Guid? TaskCreatorId { get; set; }
         public virtual User TaskCreator { get; set; }
+    }
+
+    public enum TaskStatus
+    {
+        NotStarted,
+        Started,
+        NotValidated,
+        Completed
     }
 
     public enum Priority

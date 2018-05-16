@@ -8,8 +8,9 @@ namespace Scrum.Model
     {
         protected Grooming() { }
 
-        public Grooming(IContext context) : base(context)
+        public Grooming(Task task) : base(task.Context)
         {
+            Task = task;
         }
 
         public GroomingStatus Status { get; set; }

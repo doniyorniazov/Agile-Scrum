@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using ReactiveUI;
+﻿using ReactiveUI;
 using Scrum.Model;
 using Scrum.SQL;
 using Scrum.View;
+using System.Linq;
+using System.Windows.Input;
 
 namespace Scrum.ViewModels
 {
@@ -42,7 +38,7 @@ namespace Scrum.ViewModels
                     }
                     else
                     {
-                        //TODO: cae of the regular user 
+                        //TODO: case of the regular user 
                     }
                 }
             }, canLogin);

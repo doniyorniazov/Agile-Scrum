@@ -30,12 +30,12 @@ namespace Scrum.Model
         /// <summary>
         /// Date which sprint starts
         /// </summary>
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         /// <summary>
         /// Date which sprint ends
         /// </summary>
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         public Guid? ProjectId { get; set; }
         /// <summary>

@@ -12,24 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MaterialDesignThemes.Wpf;
 
 namespace Scrum.View.Controls
 {
     /// <summary>
-    /// Interaction logic for ProjectControl.xaml
+    /// Interaction logic for WorkerControl.xaml
     /// </summary>
-    public partial class ProjectControl : UserControl
+    public partial class WorkerControl : UserControl
     {
-        public ProjectControl()
+        public WorkerControl()
         {
             InitializeComponent();
-        }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            SprintWindow sp = new SprintWindow();
-            sp.ShowDialog();
         }
     }
 }

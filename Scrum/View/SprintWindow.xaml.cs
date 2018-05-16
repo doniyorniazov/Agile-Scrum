@@ -10,24 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
-namespace Scrum.View.Controls
+namespace Scrum.View
 {
     /// <summary>
-    /// Interaction logic for UserControl.xaml
+    /// Interaction logic for SprintWindow.xaml
     /// </summary>
-    public partial class UserWindow : Window
+    public partial class SprintWindow : MetroWindow
     {
-        public UserWindow()
+        public SprintWindow()
         {
             InitializeComponent();
-        }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

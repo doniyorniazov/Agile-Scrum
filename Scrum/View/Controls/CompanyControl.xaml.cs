@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Scrum.Model;
 using Scrum.ViewModels;
 
 namespace Scrum.View.Controls
@@ -26,19 +27,23 @@ namespace Scrum.View.Controls
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var Userwindow = new UserWindow();
-            Userwindow.ShowDialog();
-        }
-
         private void OpenProjects_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
             if (button.DataContext is Model.Company selectedCompany)
             {
-                var ProjectWindow = new ProjectWindow() { DataContext = new ProjectViewModel(selectedCompany) };
-                ProjectWindow.ShowDialog();
+                var projectWindow = new ProjectWindow() { DataContext = new ProjectViewModel(selectedCompany) };
+                projectWindow.ShowDialog();
+            }
+        }
+
+        private void Open_Users_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button.DataContext is Company selectedCompany)
+            {
+                var userWindow = new WorkerWindow() { DataContext = new WorkerViewModel(selectedCompany) };
+                userWindow.ShowDialog();
             }
         }
     }

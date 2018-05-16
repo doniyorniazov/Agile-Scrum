@@ -1,0 +1,797 @@
+﻿<mahapps:MetroWindow
+    x:Class="Scrum.View.SprintWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Scrum.View.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Scrum.View"
+    xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+    Title="Scrum - Sprint"
+    Background="{DynamicResource MaterialDesignPaper}"
+    FontFamily="{DynamicResource MaterialDesignFont}"
+    GlowBrush="{DynamicResource PrimaryHueDarkBrush}"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="ThreeDBorderWindow"
+    WindowTransitionsEnabled="False"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.CheckBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Popupbox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Name="LeftBar"
+            Grid.Column="0"
+            Width="85"
+            Margin="0,10,0,0"
+            Background="#353638">
+            <TextBlock HorizontalAlignment="Center">Супориш</TextBlock>
+            <ListView HorizontalAlignment="Center">
+                <ListViewItem>NIYDON</ListViewItem>
+                <ListViewItem>AZIALI</ListViewItem>
+                <ListViewItem>TOHTOH</ListViewItem>
+                <ListViewItem>AZAFAR</ListViewItem>
+                <ListViewItem>VAYAZA</ListViewItem>
+            </ListView>
+            <Separator Style="{StaticResource MaterialDesignLightSeparator}" />
+            <TextBlock
+                Margin="5"
+                HorizontalAlignment="Center"
+                FontSize="16">
+                Тафтишот
+            </TextBlock>
+            <ListView HorizontalAlignment="Center">
+                <ListViewItem>NIYDON</ListViewItem>
+                <ListViewItem>TOHTOH</ListViewItem>
+                <ListViewItem>AZIALI</ListViewItem>
+                <ListViewItem>HOMPAH</ListViewItem>
+                <ListViewItem>SAIDIL</ListViewItem>
+            </ListView>
+        </StackPanel>
+        <Grid Name="MainGrid" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Name="NotStartedColumn" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock HorizontalAlignment="Center">Ҳоло оғоз нашудааст</TextBlock>
+                <WrapPanel
+                    Grid.Row="1"
+                    Margin="10,0"
+                    Orientation="Vertical">
+                    <smtx:XamlDisplay
+                        Key="cards_3"
+                        Margin="4,4,0,0"
+                        VerticalContentAlignment="Top">
+                        <materialDesign:Card
+                            Width="250"
+                            Height="150"
+                            Padding="0"
+                            Background="#35383a"
+                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Margin="3"
+                                    Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                                    Text="Азимов Алишер" />
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock
+                                        Margin="2"
+                                        FontSize="18"
+                                        Text="Ҳалли масъалаи рақами 105 " />
+                                    <TextBlock
+                                        Margin="2"
+                                        FontSize="18"
+                                        Text="аз китоби Абрамов" />
+                                </StackPanel>
+                                <Separator
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Margin="0,0,-0.4,22.4"
+                                    VerticalAlignment="Bottom"
+                                    BorderThickness="2"
+                                    Style="{StaticResource MaterialDesignLightSeparator}" />
+                                <StackPanel Grid.Row="3" VerticalAlignment="Bottom" />
+                                <StackPanel
+                                    Grid.Row="3"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="5"
+                                        HorizontalAlignment="Left"
+                                        FontSize="20"
+                                        Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                        120254
+                                    </TextBlock>
+                                    <materialDesign:PopupBox
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                        ToolTip="Details">
+                                        <StackPanel>
+                                            <Grid Width="600" Height="400">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="80" />
+                                                    <RowDefinition Height="150" />
+                                                    <RowDefinition Height="150" />
+                                                    <RowDefinition Height="50" />
+                                                </Grid.RowDefinitions>
+                                                <TextBlock
+                                                    Margin="5"
+                                                    FontSize="28"
+                                                    Text="Ҳалли масъалаи рақами 50 аз китоби Абрамян"
+                                                    TextWrapping="Wrap" />
+                                                <Grid
+                                                    Grid.Row="1"
+                                                    Margin="10"
+                                                    Background="#797b7c">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="Рақам" />
+                                                    <TextBlock
+                                                        Grid.Column="1"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="156984" />
+
+                                                    <TextBlock
+                                                        Grid.Row="1"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="Валидатор" />
+                                                    <TextBlock
+                                                        Grid.Row="1"
+                                                        Grid.Column="1"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="Азимов Алишер" />
+
+                                                    <TextBlock
+                                                        Grid.Row="2"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="Ҳолат" />
+                                                    <TextBlock
+                                                        Grid.Row="2"
+                                                        Grid.Column="1"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="Тайёр" />
+                                                    <TextBlock
+                                                        Grid.Row="2"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="Ҳолат" />
+
+                                                    <TextBlock
+                                                        Grid.Column="2"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="Коргар" />
+
+                                                    <TextBlock
+                                                        Grid.Column="3"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="Дониёр Ниёзов" />
+
+                                                    <TextBlock
+                                                        Grid.Row="1"
+                                                        Grid.Column="2"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="Андоза" />
+
+                                                    <TextBlock
+                                                        Grid.Row="1"
+                                                        Grid.Column="3"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"
+                                                        Text="8" />
+
+                                                    <TextBlock
+                                                        Grid.Row="2"
+                                                        Grid.Column="2"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        Text="Вақт" />
+
+                                                    <TextBlock
+                                                        Grid.Row="2"
+                                                        Grid.Column="3"
+                                                        Margin="5"
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"
+                                                        Text="6" />
+                                                </Grid>
+                                                <TextBlock
+                                                    Grid.Row="2"
+                                                    Margin="5"
+                                                    FontSize="16"
+                                                    Text="Адади натуралӣ адади комил номида мешавад, агар он ба ҳосили ҷамъи ҳамаи тақсимкунандаҳои худ (ба ғайр аз худи адад) баробар бошад.  Масалан, адади 6 адади натуралии комил аст, зеро 1+2+3=6, адади 8 адади натуралии комил нест зеро  . Адади натуралии n дода шудааст. Ададҳои комили хурд аз n бударо муайян кунед."
+                                                    TextWrapping="Wrap" />
+                                            </Grid>
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </smtx:XamlDisplay>
+                    <smtx:XamlDisplay
+                        Key="cards_3"
+                        Margin="4,4,0,0"
+                        VerticalContentAlignment="Top">
+                        <materialDesign:Card
+                            Width="250"
+                            Height="150"
+                            Padding="0"
+                            Background="#35383a"
+                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Margin="3"
+                                    Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                                    Text="Тоҳиров Тоҳирҷон" />
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock
+                                        Margin="2"
+                                        FontSize="18"
+                                        Text="Ҳалли масъалаи рақами 50 аз китоби Абрамян"
+                                        TextWrapping="Wrap" />
+                                </StackPanel>
+                                <Separator
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Margin="0,0,-0.4,22.4"
+                                    VerticalAlignment="Bottom"
+                                    BorderThickness="2"
+                                    Style="{StaticResource MaterialDesignLightSeparator}" />
+                                <StackPanel Grid.Row="3" VerticalAlignment="Bottom" />
+                                <StackPanel
+                                    Grid.Row="3"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="5"
+                                        HorizontalAlignment="Left"
+                                        FontSize="20"
+                                        Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                        150182
+                                    </TextBlock>
+                                    <materialDesign:PopupBox
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                        ToolTip="Details">
+                                        <StackPanel>
+                                            <ListView ItemsSource="{Binding Sprints}">
+                                                <ListViewItem>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding SprintNumber}" />
+                                                    </DataTemplate>
+                                                </ListViewItem>
+                                            </ListView>
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </smtx:XamlDisplay>
+                </WrapPanel>
+            </Grid>
+            <Grid Name="StartedColumn" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock HorizontalAlignment="Center">Дар рафти иҷроиш</TextBlock>
+                <WrapPanel
+                    Grid.Row="1"
+                    Margin="10,0"
+                    Orientation="Vertical">
+                    <smtx:XamlDisplay
+                        Key="cards_3"
+                        Margin="4,4,0,0"
+                        VerticalContentAlignment="Top">
+                        <materialDesign:Card
+                            Width="250"
+                            Height="150"
+                            Padding="0"
+                            Background="#35383a"
+                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Margin="3"
+                                    Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                                    Text="Ниёзов Дониёр" />
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock
+                                        Margin="2"
+                                        FontSize="18"
+                                        Text="Ҳалли масъалаи рақами 29 аз китоби Златополский"
+                                        TextWrapping="Wrap" />
+
+                                </StackPanel>
+                                <Separator
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Margin="0,0,-0.4,22.4"
+                                    VerticalAlignment="Bottom"
+                                    BorderThickness="2"
+                                    Style="{StaticResource MaterialDesignLightSeparator}" />
+                                <StackPanel Grid.Row="3" VerticalAlignment="Bottom" />
+                                <StackPanel
+                                    Grid.Row="3"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="5"
+                                        HorizontalAlignment="Left"
+                                        FontSize="20"
+                                        Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                        162637
+                                    </TextBlock>
+                                    <materialDesign:PopupBox
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                        ToolTip="Details">
+                                        <StackPanel>
+                                            <ListView ItemsSource="{Binding Sprints}">
+                                                <ListViewItem>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding SprintNumber}" />
+                                                    </DataTemplate>
+                                                </ListViewItem>
+                                            </ListView>
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </smtx:XamlDisplay>
+                    <smtx:XamlDisplay
+                        Key="cards_3"
+                        Margin="4,4,0,0"
+                        VerticalContentAlignment="Top">
+                        <materialDesign:Card
+                            Width="250"
+                            Height="150"
+                            Padding="0"
+                            Background="#35383a"
+                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Margin="3"
+                                    Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                                    Text="Аъзамӣ Фарангис" />
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock
+                                        Margin="2"
+                                        FontSize="18"
+                                        Text="Ҳалли масъалаи рақами 10 аз китоби Абрамов"
+                                        TextWrapping="Wrap" />
+                                </StackPanel>
+                                <Separator
+                                    Grid.Row="1"
+                                    VerticalAlignment="Bottom"
+                                    BorderThickness="2"
+                                    Style="{StaticResource MaterialDesignLightSeparator}" />
+                                <StackPanel VerticalAlignment="Bottom" />
+                                <StackPanel
+                                    Grid.Row="3"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="5"
+                                        HorizontalAlignment="Left"
+                                        FontSize="20"
+                                        Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                        153872
+                                    </TextBlock>
+                                    <materialDesign:PopupBox
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                        ToolTip="Details">
+                                        <StackPanel>
+                                            <ListView ItemsSource="{Binding Sprints}">
+                                                <ListViewItem>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding SprintNumber}" />
+                                                    </DataTemplate>
+                                                </ListViewItem>
+                                            </ListView>
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </smtx:XamlDisplay>
+                    <smtx:XamlDisplay
+                        Key="cards_3"
+                        Margin="4,4,0,0"
+                        VerticalContentAlignment="Top">
+                        <materialDesign:Card
+                            Width="250"
+                            Height="150"
+                            Padding="0"
+                            Background="#35383a"
+                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Margin="3"
+                                    Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                                    Text="Азимов Алишер" />
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock
+                                        Margin="2"
+                                        FontSize="18"
+                                        Text="Ҳалли масъалаи рақами 106 аз китоби Абрамов "
+                                        TextWrapping="Wrap" />
+                                </StackPanel>
+                                <Separator
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Margin="0,0,-0.4,22.4"
+                                    VerticalAlignment="Bottom"
+                                    BorderThickness="2"
+                                    Style="{StaticResource MaterialDesignLightSeparator}" />
+                                <StackPanel Grid.Row="3" VerticalAlignment="Bottom" />
+                                <StackPanel
+                                    Grid.Row="3"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="5"
+                                        HorizontalAlignment="Left"
+                                        FontSize="20"
+                                        Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                        120269
+                                    </TextBlock>
+                                    <materialDesign:PopupBox
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                        ToolTip="Details">
+                                        <StackPanel>
+                                            <ListView ItemsSource="{Binding Sprints}">
+                                                <ListViewItem>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding SprintNumber}" />
+                                                    </DataTemplate>
+                                                </ListViewItem>
+                                            </ListView>
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </smtx:XamlDisplay>
+                </WrapPanel>
+            </Grid>
+            <Grid Name="ValidateColumn" Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock HorizontalAlignment="Center">Ба итмом расид</TextBlock>
+                <WrapPanel
+                    Grid.Row="1"
+                    Margin="10,0"
+                    Orientation="Vertical">
+                    <smtx:XamlDisplay
+                        Key="cards_3"
+                        Margin="4,4,0,0"
+                        VerticalContentAlignment="Top">
+                        <materialDesign:Card
+                            Width="250"
+                            Height="150"
+                            Padding="0"
+                            Background="#35383a"
+                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Margin="3"
+                                    Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                                    Text="Тоҳиров Тоҳирҷон" />
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock
+                                        Margin="2"
+                                        FontSize="18"
+                                        Text="Ҳалли масъалаи рақами 107 аз китоби Златополский"
+                                        TextWrapping="Wrap" />
+                                </StackPanel>
+                                <Separator
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Margin="0,0,-0.4,22.4"
+                                    VerticalAlignment="Bottom"
+                                    BorderThickness="2"
+                                    Style="{StaticResource MaterialDesignLightSeparator}" />
+                                <StackPanel Grid.Row="3" VerticalAlignment="Bottom" />
+                                <StackPanel
+                                    Grid.Row="3"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="5"
+                                        HorizontalAlignment="Left"
+                                        FontSize="20"
+                                        Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                        120254
+                                    </TextBlock>
+                                    <materialDesign:PopupBox
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                        ToolTip="Details">
+                                        <StackPanel>
+                                            <ListView ItemsSource="{Binding Sprints}">
+                                                <ListViewItem>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding SprintNumber}" />
+                                                    </DataTemplate>
+                                                </ListViewItem>
+                                            </ListView>
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </smtx:XamlDisplay>
+                    <smtx:XamlDisplay
+                        Key="cards_3"
+                        Margin="4,4,0,0"
+                        VerticalContentAlignment="Top">
+                        <materialDesign:Card
+                            Width="250"
+                            Height="150"
+                            Padding="0"
+                            Background="#35383a"
+                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Margin="3"
+                                    Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                                    Text="Ниёзов Дониёр" />
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock
+                                        Margin="2"
+                                        FontSize="18"
+                                        Text="Ҳалли масъалаи рақами 40 аз китоби Златополский"
+                                        TextWrapping="Wrap" />
+                                </StackPanel>
+                                <Separator
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Margin="0,0,-0.4,22.4"
+                                    VerticalAlignment="Bottom"
+                                    BorderThickness="2"
+                                    Style="{StaticResource MaterialDesignLightSeparator}" />
+                                <StackPanel Grid.Row="3" VerticalAlignment="Bottom" />
+                                <StackPanel
+                                    Grid.Row="3"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="5"
+                                        HorizontalAlignment="Left"
+                                        FontSize="20"
+                                        Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                        163587
+                                    </TextBlock>
+                                    <materialDesign:PopupBox
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                        ToolTip="Details">
+                                        <StackPanel>
+                                            <ListView ItemsSource="{Binding Sprints}">
+                                                <ListViewItem>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding SprintNumber}" />
+                                                    </DataTemplate>
+                                                </ListViewItem>
+                                            </ListView>
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </smtx:XamlDisplay>
+                </WrapPanel>
+            </Grid>
+            <Grid Name="CompletedColumn" Grid.Column="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock HorizontalAlignment="Center">Дурӯстӣ тасдиқ шуд</TextBlock>
+                <WrapPanel
+                    Grid.Row="1"
+                    Margin="10,0"
+                    Orientation="Vertical">
+                    <smtx:XamlDisplay
+                        Key="cards_3"
+                        Margin="4,4,0,0"
+                        VerticalContentAlignment="Top">
+                        <materialDesign:Card
+                            Width="250"
+                            Height="150"
+                            Padding="0"
+                            Background="#35383a"
+                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Margin="3"
+                                    Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                                    Text="Тоҳиров Тоҳирҷон" />
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock
+                                        Margin="2"
+                                        FontSize="18"
+                                        Text="Ҳалли масъалаи рақами 98 аз китоби Абрамян"
+                                        TextWrapping="Wrap" />
+
+                                </StackPanel>
+                                <Separator
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Margin="0,0,-0.4,22.4"
+                                    VerticalAlignment="Bottom"
+                                    BorderThickness="2"
+                                    Style="{StaticResource MaterialDesignLightSeparator}" />
+                                <StackPanel Grid.Row="3" VerticalAlignment="Bottom" />
+                                <StackPanel
+                                    Grid.Row="3"
+                                    Margin="10,0"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <TextBlock
+                                        Margin="5"
+                                        HorizontalAlignment="Left"
+                                        FontSize="20"
+                                        Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                        198564
+                                    </TextBlock>
+                                    <materialDesign:PopupBox
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
+                                        ToolTip="Details">
+                                        <StackPanel>
+                                            <ListView ItemsSource="{Binding Sprints}">
+                                                <ListViewItem>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding SprintNumber}" />
+                                                    </DataTemplate>
+                                                </ListViewItem>
+                                            </ListView>
+                                        </StackPanel>
+                                    </materialDesign:PopupBox>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:Card>
+                    </smtx:XamlDisplay>
+                </WrapPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</mahapps:MetroWindow>
+

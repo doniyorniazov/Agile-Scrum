@@ -8,6 +8,7 @@ namespace Scrum.Common
 {
     public interface IContext
     {
-
+        IQueryable<T> GetEntities<T>() where T : EntityBase;
+        int SaveChanges();
     }
 }

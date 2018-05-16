@@ -10,28 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Scrum.View.Controls
 {
     /// <summary>
-    /// Interaction logic for ProjectWindow.xaml
+    /// Interaction logic for TaskPopup.xaml
     /// </summary>
-    public partial class ProjectWindow : Window
+    public partial class TaskPopup : UserControl
     {
-        public ProjectWindow()
+        public TaskPopup()
         {
             InitializeComponent();
-        }
-
-        private void Add_ProjectClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Settings_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

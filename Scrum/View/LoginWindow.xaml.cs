@@ -30,7 +30,7 @@ namespace Scrum
         {
             InitializeComponent();
             DataContext = new LoginViewModel();
-            //DemoDataCreator = new DemoDataCreator();
+            DemoDataCreator = new DemoDataCreator();
             //DemoDataCreator.CreateTestCompany();
         }
 
@@ -44,8 +44,7 @@ namespace Scrum
             App.Current.Shutdown();
         }
 
-        private void 
-            Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }

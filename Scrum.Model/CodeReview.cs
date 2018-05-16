@@ -10,9 +10,9 @@ namespace Scrum.Model
         {
         }
 
-        public CodeReview(IContext context) : base(context)
+        public CodeReview(Task task) : base(task.Context)
         {
-
+            task = Task;
         }
 
         public CodeReviewStatus Status { get; set; }
@@ -22,6 +22,7 @@ namespace Scrum.Model
         public virtual User Reviewer { get; set; }
 
         public Guid? TaskId { get; set; }
+
         public virtual Task Task { get; set; }
 
         public enum CodeReviewStatus

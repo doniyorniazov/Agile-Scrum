@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 using MaterialDesignThemes.Wpf;
 using Scrum.Model;
 using Scrum.SQL;
@@ -24,7 +25,7 @@ namespace Scrum.View
     /// <summary>
     /// Interaction logic for SuperUserWindow.xaml
     /// </summary>
-    public partial class SuperUserWindow : Window
+    public partial class SuperUserWindow : MetroWindow
     {
         private EntityContext Context;
         public SuperUserWindow()

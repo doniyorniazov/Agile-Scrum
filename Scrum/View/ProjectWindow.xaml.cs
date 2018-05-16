@@ -10,26 +10,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MaterialDesignThemes.Wpf;
+using MahApps.Metro.Controls;
 
-namespace Scrum.View.Controls
+namespace Scrum.View
 {
     /// <summary>
-    /// Interaction logic for ProjectControl.xaml
+    /// Interaction logic for ProjectWindow.xaml
     /// </summary>
-    public partial class ProjectControl : UserControl
+    public partial class ProjectWindow : MetroWindow
     {
-        public ProjectControl()
+        public ProjectWindow()
         {
             InitializeComponent();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void Add_ProjectClick(object sender, RoutedEventArgs e)
         {
-            SprintWindow sp = new SprintWindow();
-            sp.ShowDialog();
+
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

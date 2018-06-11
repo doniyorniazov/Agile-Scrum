@@ -23,13 +23,13 @@ namespace Scrum.View
     /// <summary>
     /// Interaction logic for BacklogWindow.xaml
     /// </summary>
-    public partial class BacklogWindow : MetroWindow
+    public partial class BacklogWindow : CustomWindow
     {
         public BacklogWindow()
         {
             InitializeComponent();
             DataContext = new BacklogViewModel();
-            var DemoDataCreator = new DemoDataCreator();
+            //var DemoDataCreator = new DemoDataCreator();
             //DemoDataCreator.CreateTestCompany();
         }
 

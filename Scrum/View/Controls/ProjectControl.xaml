@@ -10,6 +10,7 @@
     xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
     Background="{DynamicResource MaterialDesignPaper}"
     FontFamily="{DynamicResource MaterialDesignFont}"
+    Loaded="Project_Loaded"
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
     mc:Ignorable="d">
     <UserControl.Resources>
@@ -29,11 +30,9 @@
                 Key="cards_3"
                 Margin="4,4,0,0"
                 VerticalContentAlignment="Top">
-                <materialDesign:Card
-                    Width="250"
-                    Padding="0"
-                    Background="#35383a"
-                    Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                <materialDesign:Card Width="250" Padding="0">
+                    <!--  Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"  -->
+                    <!--  Background="#35383a"  -->
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -75,17 +74,13 @@
                                 Style="{StaticResource MaterialDesignToolForegroundPopupBox}"
                                 ToolTip="Open sprints">
                                 <StackPanel>
-                                    <ListBox>
-                                        <ListBoxItem>
-                                            <Button Click="ButtonBase_OnClick">0001</Button>
-                                        </ListBoxItem>
-                                        <ListBoxItem>
-                                            <Button Click="ButtonBase_OnClick">0002</Button>
-                                        </ListBoxItem>
-                                        <ListBoxItem>
-                                            <Button Click="ButtonBase_OnClick">0003</Button>
-                                        </ListBoxItem>
-                                    </ListBox>
+                                    <ListView Name="uiSprints">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Button Click="btnSprint_Clicked" Content="{Binding Number}" />
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
                                 </StackPanel>
                             </materialDesign:PopupBox>
                         </StackPanel>

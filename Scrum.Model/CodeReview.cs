@@ -25,12 +25,12 @@ namespace Scrum.Model
 
         public virtual Task Task { get; set; }
 
-        public enum CodeReviewStatus
-        {
-            NeedsCpr = 0,
-            WaitingForCpr = 1,
-            CprComplete = 2,
-            CprSkipped = 3
-        }
+    }
+    public enum CodeReviewStatus
+    {
+        NeedsCpr = 0,
+        WaitingForCpr = 1,
+        CprComplete = 2,
+        CprSkipped = 3
     }
 }

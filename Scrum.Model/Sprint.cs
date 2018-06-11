@@ -20,7 +20,7 @@ namespace Scrum.Model
         /// <summary>
         /// Sprint number: 0001
         /// </summary>
-        public int Number { get; set; }
+        public string Number { get; set; }
 
         /// <summary>
         /// Period of sprint: 2 weeks or 4 weeks

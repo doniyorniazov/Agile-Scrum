@@ -38,7 +38,7 @@
                 </materialDesign:ColorZone>
             </Grid>
         </Border>
-        <TextBlock FontSize="18"  Grid.Row="1"  Text="New Company" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"  ></TextBlock>
+        <TextBlock FontSize="18"  Grid.Row="1"  Text="New Company" HorizontalAlignment="Center" Foreground="Black" VerticalAlignment="Center"  ></TextBlock>
 
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>

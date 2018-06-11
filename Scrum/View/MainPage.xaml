@@ -12,7 +12,7 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        Foreground="White"
+        Foreground="Black"
         mc:Ignorable="d"
         Title="MainPage" Height="600" Width="1080"  WindowStartupLocation="CenterScreen" >
     <Window.Resources>
@@ -75,9 +75,9 @@
                     <!--<ListView >-->
                     <!--
                         <StackPanel Orientation="Vertical" >
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin=" 0 5" Text="NIYDON"></TextBlock>
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin=" 0 5"  Text="KHAASR"></TextBlock>
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin=" 0 5"  Text="KHUAZA"></TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" Margin=" 0 5" Text="NIYDON"></TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" Margin=" 0 5"  Text="KHAASR"></TextBlock>
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Black" Margin=" 0 5"  Text="KHUAZA"></TextBlock>
                         </StackPanel>
                     -->
                     <!--</ListView>-->

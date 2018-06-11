@@ -30,8 +30,8 @@ namespace Scrum
         {
             InitializeComponent();
             DataContext = new LoginViewModel();
-            DemoDataCreator = new DemoDataCreator();
-            //DemoDataCreator.CreateTestCompany();
+                //DemoDataCreator = new DemoDataCreator();
+                //DemoDataCreator.CreateTestCompany();
         }
 
         private void UIElement_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -42,11 +42,6 @@ namespace Scrum
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             App.Current.Shutdown();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

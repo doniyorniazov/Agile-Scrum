@@ -1,4 +1,4 @@
-﻿<mahapps:MetroWindow
+﻿<local:CustomWindow
     x:Class="Scrum.View.BacklogWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -15,6 +15,7 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="ThreeDBorderWindow"
     mc:Ignorable="d">
+    <!--    -->
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -35,8 +36,8 @@
         <StackPanel
             Name="LeftButttons"
             Grid.Row="0"
-            Grid.Column="0"
-            Background="#353638">
+            Grid.Column="0">
+            <!--  Background="#353638"  -->
             <Button
                 Width="35"
                 Height="35"
@@ -48,7 +49,7 @@
                     Height="25"
                     Kind="Plus" />
             </Button>
-            <TextBlock HorizontalAlignment="Center">Add Company</TextBlock>
+            <TextBlock HorizontalAlignment="Center">Add task</TextBlock>
             <Button
                 Width="35"
                 Height="35"
@@ -82,7 +83,6 @@
                 <DataGridTextColumn Binding="{Binding Size}" Header="Size" />
                 <DataGridTextColumn Binding="{Binding Title}" Header="Title" />
                 <DataGridTextColumn Binding="{Binding TicketNumber}" Header="Ticket number" />
-
                 <DataGridTextColumn
                     MaxWidth="500"
                     Binding="{Binding Description}"
@@ -93,5 +93,5 @@
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
-</mahapps:MetroWindow>
+</local:CustomWindow>
 

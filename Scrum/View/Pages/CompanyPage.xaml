@@ -41,7 +41,7 @@
                                     <Border Padding="9" >
                                         <Border Width="{Binding ActualHeight , RelativeSource ={RelativeSource Self}}" Background="CadetBlue"
                                                 CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
-                                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding CompanyLogo}" FontWeight="Bold" FontSize="35" Foreground="White"/>
+                                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding CompanyLogo}" FontWeight="Bold" FontSize="35" Foreground="Black"/>
                                         </Border>
                                     </Border>
                                     <Border>

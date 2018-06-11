@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
+using Scrum.Model;
+using Scrum.ViewModels;
 
 namespace Scrum.View.Controls
 {
@@ -21,15 +23,25 @@ namespace Scrum.View.Controls
     /// </summary>
     public partial class ProjectControl : UserControl
     {
+        public Project Project { get; set; }
         public ProjectControl()
         {
             InitializeComponent();
+            Project = DataContext as Project;
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void Project_Loaded(object sender, RoutedEventArgs e)
         {
-            SprintWindow sp = new SprintWindow();
-            sp.ShowDialog();
+            var project = (sender as dynamic).DataContext as Project;
+            var sprints = project.Sprints;
+            uiSprints.ItemsSource = sprints;
+        }
+
+        private void btnSprint_Clicked(object sender, RoutedEventArgs e)
+        {
+            var sprint = (sender as dynamic).DataContext as Sprint;
+            var sprintWindow = new SprintWindow() { DataContext = new SprintViewModel(sprint) };
+            sprintWindow.ShowDialog();
         }
     }
 }

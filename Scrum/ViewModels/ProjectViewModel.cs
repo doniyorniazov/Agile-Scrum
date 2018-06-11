@@ -20,6 +20,17 @@ namespace Scrum.ViewModels
             Projects = new ObservableCollection<Project>(company.Projects);
         }
 
+        ObservableCollection<Sprint> _sprints;
+        public ObservableCollection<Sprint> Sprints
+        {
+            get
+            {
+                return _sprints ?? (_sprints =
+                           new ObservableCollection<Sprint>(Context.GetEntities<Sprint>().Where(s => s.Project == SelectedProject)));
+            }
+            set { _sprints = value; OnPropertyChanged(); }
+        }
+
         Project _selectedProject;
         public Project SelectedProject
         {
@@ -63,6 +74,7 @@ namespace Scrum.ViewModels
             get => _company;
             set { _company = value; OnPropertyChanged(); }
         }
+
 
         private ObservableCollection<Project> _projects;
 

@@ -1,4 +1,4 @@
-﻿<mahapps:MetroWindow
+﻿<local:CustomWindow
     x:Class="Scrum.View.ProjectWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -37,13 +37,13 @@
             <StackPanel
                 Name="LeftButttons"
                 Grid.Row="0"
-                Grid.Column="0"
-                Background="#353638">
+                Grid.Column="0">
+                <!--  Background="#353638"  -->
                 <Button
                     Width="35"
                     Height="35"
                     Margin="10,5"
-                    Background="{x:Null}"
+                    
                     Click="Add_ProjectClick"
                     Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                     ToolTip="Add new company">
@@ -57,7 +57,6 @@
                     Width="35"
                     Height="35"
                     Margin="10,5"
-                    Background="Transparent"
                     Click="Settings_Click"
                     Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                     ToolTip="Open settings">
@@ -71,7 +70,7 @@
                     Width="35"
                     Height="35"
                     Margin="10,5"
-                    Background="Transparent"
+                    
                     Click="Settings_Click"
                     Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                     ToolTip="Open settings">
@@ -85,7 +84,7 @@
                     Width="35"
                     Height="35"
                     Margin="10,5"
-                    Background="Transparent"
+                    
                     Click="Settings_Click"
                     Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                     ToolTip="Open settings">
@@ -99,7 +98,7 @@
                     Width="35"
                     Height="35"
                     Margin="10,5"
-                    Background="Transparent"
+                    
                     Click="Settings_Click"
                     Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                     ToolTip="Open settings">
@@ -113,7 +112,7 @@
                     Width="35"
                     Height="35"
                     Margin="10,5"
-                    Background="Transparent"
+                    
                     Click="Settings_Click"
                     Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                     ToolTip="Open settings">
@@ -127,7 +126,7 @@
                     Width="35"
                     Height="35"
                     Margin="10,5"
-                    Background="Transparent"
+                    
                     Click="Settings_Click"
                     Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                     ToolTip="Open settings">
@@ -142,7 +141,7 @@
                     Width="35"
                     Height="35"
                     Margin="10,5"
-                    Background="Transparent"
+                    
                     Click="Settings_Click"
                     Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                     ToolTip="Open settings">
@@ -174,5 +173,5 @@
             </WrapPanel>
         </Grid>
     </Grid>
-</mahapps:MetroWindow>
+</local:CustomWindow>
 

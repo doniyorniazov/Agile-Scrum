@@ -24,7 +24,7 @@ namespace Scrum.ViewModels
             get
             {
                 return _tasks ?? (_tasks =
-                           new ObservableCollection<Task>(Context.GetEntities<Task>().Where(t => t.Title != null)));
+                           new ObservableCollection<Task>(Context.GetEntities<Task>().Where(t => t.TaskStatus == TaskStatus.NotStarted)));
             }
             set => _tasks = value;
         }

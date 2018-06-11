@@ -25,7 +25,7 @@ namespace Scrum.View
     /// <summary>
     /// Interaction logic for SuperUserWindow.xaml
     /// </summary>
-    public partial class SuperUserWindow : MetroWindow
+    public partial class SuperUserWindow : CustomWindow
     {
         private EntityContext Context;
         public SuperUserWindow()

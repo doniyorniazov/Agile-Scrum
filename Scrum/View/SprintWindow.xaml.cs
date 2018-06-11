@@ -12,17 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using Scrum.ViewModels;
 
 namespace Scrum.View
 {
     /// <summary>
     /// Interaction logic for SprintWindow.xaml
     /// </summary>
-    public partial class SprintWindow : MetroWindow
+    public partial class SprintWindow : CustomWindow
     {
         public SprintWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var backlog = new BacklogWindow();
+            backlog.ShowDialog();
         }
     }
 }

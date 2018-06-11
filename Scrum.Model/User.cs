@@ -45,5 +45,10 @@ namespace Scrum.Model
         public virtual ICollection<Validation> Validations { get; set; }
         public virtual ICollection<Project> POProjects { get; set; }
         public virtual ICollection<Project> ScrumProjects { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

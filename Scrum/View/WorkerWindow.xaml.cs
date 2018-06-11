@@ -6,7 +6,7 @@ namespace Scrum.View
     /// <summary>
     /// Interaction logic for UserControl.xaml
     /// </summary>
-    public partial class WorkerWindow : MetroWindow
+    public partial class WorkerWindow : CustomWindow
     {
         public WorkerWindow()
         {

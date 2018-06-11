@@ -18,7 +18,7 @@ namespace Scrum.View
     /// <summary>
     /// Interaction logic for ProjectWindow.xaml
     /// </summary>
-    public partial class ProjectWindow : MetroWindow
+    public partial class ProjectWindow : CustomWindow
     {
         public ProjectWindow()
         {
